@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_dictionary action="INSERT_OR_UPDATE" element="u_caller" table="x_982612_technical_incident">
+        <active>true</active>
+        <array>false</array>
+        <attributes>encode_utf8=false</attributes>
+        <audit>false</audit>
+        <calculation/>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label>Caller</column_label>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script>var current = gs.getCurrentRecord();&#13;
+var g_form = current.getGlideForm();&#13;
+var company_value = g_form.getValue('company');&#13;
+var user_gr = new GlideRecord('sys_user');&#13;
+user_gr.addQuery('company', company_value);&#13;
+query.addQuery('sys_id', 'IN', user_gr);&#13;
+query.addQuery('u_caller', '!=', '');</dynamic_creation_script>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>u_caller</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <internal_type display_value="Reference">reference</internal_type>
+        <mandatory>true</mandatory>
+        <max_length>32</max_length>
+        <name>x_982612_technical_incident</name>
+        <next_element/>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference display_value="" name="sys_user">sys_user</reference>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual>javascript: "company=" + current.u_company</reference_qual>
+        <reference_qual_condition/>
+        <reference_type/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_dictionary</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2023-03-06 13:01:06</sys_created_on>
+        <sys_name>Caller</sys_name>
+        <sys_package display_value="Technical Exam" source="x_982612_technical">c7fdf35b979d21105540bf8fe153afb6</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Technical Exam">c7fdf35b979d21105540bf8fe153afb6</sys_scope>
+        <sys_update_name>sys_dictionary_x_982612_technical_incident_u_caller</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2023-03-10 15:50:35</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>true</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>advanced</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_dictionary>
+</record_update>

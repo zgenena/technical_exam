@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_script_client">
+    <sys_script_client action="DELETE">
+        <active>false</active>
+        <applies_extended>false</applies_extended>
+        <condition/>
+        <description>Make caller read only until company is filled</description>
+        <field>u_caller</field>
+        <global>true</global>
+        <isolate_script>true</isolate_script>
+        <messages/>
+        <name>!Caller read only until company filled</name>
+        <order/>
+        <script><![CDATA[function onChange(control, oldValue, newValue, isLoading) {
+    if (isLoading || newValue === '') {
+        return;
+    }
+    var dependentField = g_form.getControl('u_caller');
+    var dependentFieldReadonly = true;
+    if (g_form.getValue('u_company')) {
+        dependentFieldReadonly = false;
+    }
+    if (dependentField) {
+        dependentField.setReadOnly(dependentFieldReadonly);
+    }
+}
+]]></script>
+        <sys_class_name>sys_script_client</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2023-03-09 15:04:31</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>46c08ca4976121105540bf8fe153af8f</sys_id>
+        <sys_mod_count>7</sys_mod_count>
+        <sys_name>!Caller read only until company filled</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Technical Exam" source="x_982612_technical">c7fdf35b979d21105540bf8fe153afb6</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Technical Exam">c7fdf35b979d21105540bf8fe153afb6</sys_scope>
+        <sys_update_name>sys_script_client_46c08ca4976121105540bf8fe153af8f</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2023-03-09 16:20:16</sys_updated_on>
+        <table>x_982612_technical_incident</table>
+        <type>onChange</type>
+        <ui_type>0</ui_type>
+        <view/>
+    </sys_script_client>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Technical Exam">c7fdf35b979d21105540bf8fe153afb6</application>
+        <file_path/>
+        <instance_id>a8dc9cd2db33d7807d8cf22ebf9619d6</instance_id>
+        <instance_name>dev69827</instance_name>
+        <name>sys_script_client_46c08ca4976121105540bf8fe153af8f</name>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update sys_domain="global" table="sys_script_client"&gt;&lt;sys_script_client action="INSERT_OR_UPDATE"&gt;&lt;active&gt;false&lt;/active&gt;&lt;applies_extended&gt;false&lt;/applies_extended&gt;&lt;condition/&gt;&lt;description&gt;Make caller read only until company is filled&lt;/description&gt;&lt;field&gt;u_caller&lt;/field&gt;&lt;global&gt;true&lt;/global&gt;&lt;isolate_script&gt;true&lt;/isolate_script&gt;&lt;messages/&gt;&lt;name&gt;!Caller read only until company filled&lt;/name&gt;&lt;order/&gt;&lt;script&gt;&lt;![CDATA[function onChange(control, oldValue, newValue, isLoading) {
+    if (isLoading || newValue === '') {
+        return;
+    }
+    var dependentField = g_form.getControl('u_caller');
+    var dependentFieldReadonly = true;
+    if (g_form.getValue('u_company')) {
+        dependentFieldReadonly = false;
+    }
+    if (dependentField) {
+        dependentField.setReadOnly(dependentFieldReadonly);
+    }
+}
+]]&gt;&lt;/script&gt;&lt;sys_class_name&gt;sys_script_client&lt;/sys_class_name&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2023-03-09 15:04:31&lt;/sys_created_on&gt;&lt;sys_domain&gt;global&lt;/sys_domain&gt;&lt;sys_domain_path&gt;/&lt;/sys_domain_path&gt;&lt;sys_id&gt;46c08ca4976121105540bf8fe153af8f&lt;/sys_id&gt;&lt;sys_mod_count&gt;7&lt;/sys_mod_count&gt;&lt;sys_name&gt;!Caller read only until company filled&lt;/sys_name&gt;&lt;sys_overrides/&gt;&lt;sys_package display_value="Technical Exam" source="x_982612_technical"&gt;c7fdf35b979d21105540bf8fe153afb6&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="Technical Exam"&gt;c7fdf35b979d21105540bf8fe153afb6&lt;/sys_scope&gt;&lt;sys_update_name&gt;sys_script_client_46c08ca4976121105540bf8fe153af8f&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2023-03-09 16:20:16&lt;/sys_updated_on&gt;&lt;table&gt;x_982612_technical_incident&lt;/table&gt;&lt;type&gt;onChange&lt;/type&gt;&lt;ui_type&gt;0&lt;/ui_type&gt;&lt;view/&gt;&lt;/sys_script_client&gt;&lt;/record_update&gt;</payload>
+        <payload_hash>444790260</payload_hash>
+        <record_name>!Caller read only until company filled</record_name>
+        <reverted_from/>
+        <source>4ffdf35b979d21105540bf8fe153afb8</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2023-03-09 16:20:16</sys_created_on>
+        <sys_id>ee23146897a121105540bf8fe153af44</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>186c72c52db0000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2023-03-09 16:20:16</sys_updated_on>
+        <type>Client Script</type>
+        <update_guid>e623146874a12110873f9ce1ceeedb44</update_guid>
+        <update_guid_history>e623146874a12110873f9ce1ceeedb44:444790260,4482182897a12110f9970deefdfb9e5c:-975419934,cb644068fe612110dd183296b1d987ae:222421842,3953046857612110275fc8c428edbbdd:166186753,6123882889612110fc931228fb49ae73:-1646822012,22e2c0e4506121101a568bd6656c13bd:-831181888,6e82cce4f761211073b18bb3c358febb:715216913,cdd1c8245761211068bd0873b4831422:-480623146</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2023-03-10 15:51:47</sys_created_on>
+        <sys_db_object display_value="" name="sys_script_client">sys_script_client</sys_db_object>
+        <sys_id>2796a87bd1014c34a91461d1b41350a1</sys_id>
+        <sys_metadata>46c08ca4976121105540bf8fe153af8f</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>!Caller read only until company filled</sys_name>
+        <sys_package display_value="Technical Exam" source="x_982612_technical">c7fdf35b979d21105540bf8fe153afb6</sys_package>
+        <sys_parent display_value="Incident">f41ebbdb979d21105540bf8fe153afa5</sys_parent>
+        <sys_policy/>
+        <sys_scope display_value="Technical Exam">c7fdf35b979d21105540bf8fe153afb6</sys_scope>
+        <sys_scope_delete display_value="">0746965335264dd4ab515291272b2ce4</sys_scope_delete>
+        <sys_update_name>sys_script_client_46c08ca4976121105540bf8fe153af8f</sys_update_name>
+        <sys_update_version display_value="sys_script_client_46c08ca4976121105540bf8fe153af8f">ee23146897a121105540bf8fe153af44</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2023-03-10 15:51:47</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

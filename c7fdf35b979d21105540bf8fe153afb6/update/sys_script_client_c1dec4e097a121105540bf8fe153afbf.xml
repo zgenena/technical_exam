@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_script_client">
+    <sys_script_client action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <applies_extended>false</applies_extended>
+        <condition/>
+        <description>Make Assigned to and Assignment groups mandatory after creation</description>
+        <field/>
+        <global>true</global>
+        <isolate_script>true</isolate_script>
+        <messages/>
+        <name>Assigned to, Assignment groups mandatory</name>
+        <order/>
+        <script><![CDATA[function onLoad() {
+    var isNewRecord = g_form.isNewRecord();
+	if (!isNewRecord) {
+    g_form.setMandatory('u_assignment_group', true);
+    g_form.setMandatory('u_assigned_to', true);
+  }
+  else {
+    g_form.setMandatory('u_assignment_group', false);
+    g_form.setMandatory('u_assigned_to', false);
+  }
+}]]></script>
+        <sys_class_name>sys_script_client</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2023-03-09 16:06:48</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>c1dec4e097a121105540bf8fe153afbf</sys_id>
+        <sys_mod_count>7</sys_mod_count>
+        <sys_name>Assigned to, Assignment groups mandatory</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Technical Exam" source="x_982612_technical">c7fdf35b979d21105540bf8fe153afb6</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Technical Exam">c7fdf35b979d21105540bf8fe153afb6</sys_scope>
+        <sys_update_name>sys_script_client_c1dec4e097a121105540bf8fe153afbf</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2023-03-10 15:58:14</sys_updated_on>
+        <table>x_982612_technical_incident</table>
+        <type>onLoad</type>
+        <ui_type>0</ui_type>
+        <view/>
+    </sys_script_client>
+</record_update>

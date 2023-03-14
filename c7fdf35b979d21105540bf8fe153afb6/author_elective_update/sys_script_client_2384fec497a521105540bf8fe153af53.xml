@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_script_client">
+    <sys_script_client action="DELETE">
+        <active>false</active>
+        <applies_extended>false</applies_extended>
+        <condition/>
+        <description>Make company mandatory on creation</description>
+        <field/>
+        <global>true</global>
+        <isolate_script>true</isolate_script>
+        <messages/>
+        <name>Company is mandatory</name>
+        <order/>
+        <script><![CDATA[function onLoad() {
+  // Get the u_company field element
+  var companyField = document.getElementById("x_982612_technical_incident.u_company");
+  
+  // Add an asterisk to the field label to indicate that it's mandatory
+  var fieldLabel = document.querySelector("label[for='x_982612_technical_incident.u_company']");
+  fieldLabel.innerHTML += " <span class='mandatory'>*</span>";
+  
+  // Add a 'required' attribute to the field
+  companyField.required = true;
+  
+  // Add any other onLoad code you need here
+}
+]]></script>
+        <sys_class_name>sys_script_client</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2023-03-08 15:02:24</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>2384fec497a521105540bf8fe153af53</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>Company is mandatory</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Technical Exam" source="x_982612_technical">c7fdf35b979d21105540bf8fe153afb6</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Technical Exam">c7fdf35b979d21105540bf8fe153afb6</sys_scope>
+        <sys_update_name>sys_script_client_2384fec497a521105540bf8fe153af53</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2023-03-09 13:55:29</sys_updated_on>
+        <table>x_982612_technical_incident</table>
+        <type>onLoad</type>
+        <ui_type>10</ui_type>
+        <view/>
+    </sys_script_client>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Technical Exam">c7fdf35b979d21105540bf8fe153afb6</application>
+        <file_path/>
+        <instance_id>a8dc9cd2db33d7807d8cf22ebf9619d6</instance_id>
+        <instance_name>dev69827</instance_name>
+        <name>sys_script_client_2384fec497a521105540bf8fe153af53</name>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update sys_domain="global" table="sys_script_client"&gt;&lt;sys_script_client action="INSERT_OR_UPDATE"&gt;&lt;active&gt;false&lt;/active&gt;&lt;applies_extended&gt;false&lt;/applies_extended&gt;&lt;condition/&gt;&lt;description&gt;Make company mandatory on creation&lt;/description&gt;&lt;field/&gt;&lt;global&gt;true&lt;/global&gt;&lt;isolate_script&gt;true&lt;/isolate_script&gt;&lt;messages/&gt;&lt;name&gt;Company is mandatory&lt;/name&gt;&lt;order/&gt;&lt;script&gt;&lt;![CDATA[function onLoad() {
+  // Get the u_company field element
+  var companyField = document.getElementById("x_982612_technical_incident.u_company");
+  
+  // Add an asterisk to the field label to indicate that it's mandatory
+  var fieldLabel = document.querySelector("label[for='x_982612_technical_incident.u_company']");
+  fieldLabel.innerHTML += " &lt;span class='mandatory'&gt;*&lt;/span&gt;";
+  
+  // Add a 'required' attribute to the field
+  companyField.required = true;
+  
+  // Add any other onLoad code you need here
+}
+]]&gt;&lt;/script&gt;&lt;sys_class_name&gt;sys_script_client&lt;/sys_class_name&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2023-03-08 15:02:24&lt;/sys_created_on&gt;&lt;sys_domain&gt;global&lt;/sys_domain&gt;&lt;sys_domain_path&gt;/&lt;/sys_domain_path&gt;&lt;sys_id&gt;2384fec497a521105540bf8fe153af53&lt;/sys_id&gt;&lt;sys_mod_count&gt;1&lt;/sys_mod_count&gt;&lt;sys_name&gt;Company is mandatory&lt;/sys_name&gt;&lt;sys_overrides/&gt;&lt;sys_package display_value="Technical Exam" source="x_982612_technical"&gt;c7fdf35b979d21105540bf8fe153afb6&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="Technical Exam"&gt;c7fdf35b979d21105540bf8fe153afb6&lt;/sys_scope&gt;&lt;sys_update_name&gt;sys_script_client_2384fec497a521105540bf8fe153af53&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2023-03-09 13:55:29&lt;/sys_updated_on&gt;&lt;table&gt;x_982612_technical_incident&lt;/table&gt;&lt;type&gt;onLoad&lt;/type&gt;&lt;ui_type&gt;10&lt;/ui_type&gt;&lt;view/&gt;&lt;/sys_script_client&gt;&lt;/record_update&gt;</payload>
+        <payload_hash>-796696185</payload_hash>
+        <record_name>Company is mandatory</record_name>
+        <reverted_from/>
+        <source>4ffdf35b979d21105540bf8fe153afb8</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2023-03-09 13:55:30</sys_created_on>
+        <sys_id>8602b394972121105540bf8fe153afab</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>186c6a7c8b90000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2023-03-09 13:55:30</sys_updated_on>
+        <type>Client Script</type>
+        <update_guid>0e02b3948721211057818738c54d21aa</update_guid>
+        <update_guid_history>0e02b3948721211057818738c54d21aa:-796696185,d0c7ba846ba52110ab03de61aa9b241f:826469492</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2023-03-09 14:36:41</sys_created_on>
+        <sys_db_object display_value="" name="sys_script_client">sys_script_client</sys_db_object>
+        <sys_id>4e3ce025059e4f00a589fff5b340e100</sys_id>
+        <sys_metadata>2384fec497a521105540bf8fe153af53</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Company is mandatory</sys_name>
+        <sys_package display_value="Technical Exam" source="x_982612_technical">c7fdf35b979d21105540bf8fe153afb6</sys_package>
+        <sys_parent display_value="Incident">f41ebbdb979d21105540bf8fe153afa5</sys_parent>
+        <sys_policy/>
+        <sys_scope display_value="Technical Exam">c7fdf35b979d21105540bf8fe153afb6</sys_scope>
+        <sys_scope_delete display_value="">0746965335264dd4ab515291272b2ce4</sys_scope_delete>
+        <sys_update_name>sys_script_client_2384fec497a521105540bf8fe153af53</sys_update_name>
+        <sys_update_version display_value="sys_script_client_2384fec497a521105540bf8fe153af53">8602b394972121105540bf8fe153afab</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2023-03-09 14:36:41</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

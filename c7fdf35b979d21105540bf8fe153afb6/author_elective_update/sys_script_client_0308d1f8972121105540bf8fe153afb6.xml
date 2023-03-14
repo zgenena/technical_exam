@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_script_client">
+    <sys_script_client action="DELETE">
+        <active>false</active>
+        <applies_extended>false</applies_extended>
+        <condition/>
+        <description>Make customer state open after creation</description>
+        <field>u_assigned_to</field>
+        <global>true</global>
+        <isolate_script>false</isolate_script>
+        <messages/>
+        <name>!Customer state is open after creation</name>
+        <order/>
+        <script><![CDATA[function onLoad() {
+    var stateField = g_form.getField('u_customer_state'); // Set 'u_customer_state' as the actual name of your choice field
+	var isNewRecord = g_form.isNewRecord();
+	if (!isNewRecord) {
+      g_form.getField('u_customer_state').setValue('open'); // Set the value of the choice field to 'open'
+  }
+}]]></script>
+        <sys_class_name>sys_script_client</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2023-03-10 16:06:55</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>0308d1f8972121105540bf8fe153afb6</sys_id>
+        <sys_mod_count>16</sys_mod_count>
+        <sys_name>!Customer state is open after creation</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Technical Exam" source="x_982612_technical">c7fdf35b979d21105540bf8fe153afb6</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Technical Exam">c7fdf35b979d21105540bf8fe153afb6</sys_scope>
+        <sys_update_name>sys_script_client_0308d1f8972121105540bf8fe153afb6</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2023-03-10 16:39:10</sys_updated_on>
+        <table>x_982612_technical_incident</table>
+        <type>onLoad</type>
+        <ui_type>0</ui_type>
+        <view/>
+    </sys_script_client>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Technical Exam">c7fdf35b979d21105540bf8fe153afb6</application>
+        <file_path/>
+        <instance_id>a8dc9cd2db33d7807d8cf22ebf9619d6</instance_id>
+        <instance_name>dev69827</instance_name>
+        <name>sys_script_client_0308d1f8972121105540bf8fe153afb6</name>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update sys_domain="global" table="sys_script_client"&gt;&lt;sys_script_client action="INSERT_OR_UPDATE"&gt;&lt;active&gt;false&lt;/active&gt;&lt;applies_extended&gt;false&lt;/applies_extended&gt;&lt;condition/&gt;&lt;description&gt;Make customer state open after creation&lt;/description&gt;&lt;field&gt;u_assigned_to&lt;/field&gt;&lt;global&gt;true&lt;/global&gt;&lt;isolate_script&gt;false&lt;/isolate_script&gt;&lt;messages/&gt;&lt;name&gt;!Customer state is open after creation&lt;/name&gt;&lt;order/&gt;&lt;script&gt;&lt;![CDATA[function onLoad() {
+    var stateField = g_form.getField('u_customer_state'); // Set 'u_customer_state' as the actual name of your choice field
+	var isNewRecord = g_form.isNewRecord();
+	if (!isNewRecord) {
+      g_form.getField('u_customer_state').setValue('open'); // Set the value of the choice field to 'open'
+  }
+}]]&gt;&lt;/script&gt;&lt;sys_class_name&gt;sys_script_client&lt;/sys_class_name&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2023-03-10 16:06:55&lt;/sys_created_on&gt;&lt;sys_domain&gt;global&lt;/sys_domain&gt;&lt;sys_domain_path&gt;/&lt;/sys_domain_path&gt;&lt;sys_id&gt;0308d1f8972121105540bf8fe153afb6&lt;/sys_id&gt;&lt;sys_mod_count&gt;16&lt;/sys_mod_count&gt;&lt;sys_name&gt;!Customer state is open after creation&lt;/sys_name&gt;&lt;sys_overrides/&gt;&lt;sys_package display_value="Technical Exam" source="x_982612_technical"&gt;c7fdf35b979d21105540bf8fe153afb6&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="Technical Exam"&gt;c7fdf35b979d21105540bf8fe153afb6&lt;/sys_scope&gt;&lt;sys_update_name&gt;sys_script_client_0308d1f8972121105540bf8fe153afb6&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2023-03-10 16:39:10&lt;/sys_updated_on&gt;&lt;table&gt;x_982612_technical_incident&lt;/table&gt;&lt;type&gt;onLoad&lt;/type&gt;&lt;ui_type&gt;0&lt;/ui_type&gt;&lt;view/&gt;&lt;/sys_script_client&gt;&lt;/record_update&gt;</payload>
+        <payload_hash>2009962282</payload_hash>
+        <record_name>!Customer state is open after creation</record_name>
+        <reverted_from/>
+        <source>4ffdf35b979d21105540bf8fe153afb8</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2023-03-10 16:39:10</sys_created_on>
+        <sys_id>1511adf0976121105540bf8fe153afed</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>186cc63fbca0000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2023-03-10 16:39:10</sys_updated_on>
+        <type>Client Script</type>
+        <update_guid>1d11adf0876121104470f977c7a40eec</update_guid>
+        <update_guid_history>1d11adf0876121104470f977c7a40eec:2009962282,2c9f59f03a612110ace7336e02f2d7ee:1221450873,4a4f15f0a46121108ea0fabc77b9d72e:49926356,adde9d704661211091234707203ef46e:339601831,8cfd51b0776121104ebaad0c2cde8d86:502887351,ebbd1d70bf612110cc40bf05b2ab625b:-1303563465,af5d157073612110eebaae03f601d7ce:133877012,010d9d30ed612110bb2326416f9ce014:872401337,559c5d3044612110ab4682b1213b4a8d:86367347,d16c1530f76121101b6edf3ce7c0f6f6:1761540887,330c9dfc07212110f1e684217a0ed450:-1226953533,a38b15fcdf2121102b2792aed76dddb0:-60160700,024b91bc59212110e4696c02612e2156:702543753,e3ea11bcc5212110a2f1ad916ae9e001:1318997895,debadd7c24212110ce4c8e7f68a5743a:-1517010660,848a913c8e2121100bccc2902808e522:2120144456,f4b99d7cd221211004e699a372d86947:-1496660527</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2023-03-10 16:50:52</sys_created_on>
+        <sys_db_object display_value="" name="sys_script_client">sys_script_client</sys_db_object>
+        <sys_id>aadad0a25e2744e4a3031098a55a7b49</sys_id>
+        <sys_metadata>0308d1f8972121105540bf8fe153afb6</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>!Customer state is open after creation</sys_name>
+        <sys_package display_value="Technical Exam" source="x_982612_technical">c7fdf35b979d21105540bf8fe153afb6</sys_package>
+        <sys_parent display_value="Incident">f41ebbdb979d21105540bf8fe153afa5</sys_parent>
+        <sys_policy/>
+        <sys_scope display_value="Technical Exam">c7fdf35b979d21105540bf8fe153afb6</sys_scope>
+        <sys_scope_delete display_value="">0746965335264dd4ab515291272b2ce4</sys_scope_delete>
+        <sys_update_name>sys_script_client_0308d1f8972121105540bf8fe153afb6</sys_update_name>
+        <sys_update_version display_value="sys_script_client_0308d1f8972121105540bf8fe153afb6">1511adf0976121105540bf8fe153afed</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2023-03-10 16:50:52</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

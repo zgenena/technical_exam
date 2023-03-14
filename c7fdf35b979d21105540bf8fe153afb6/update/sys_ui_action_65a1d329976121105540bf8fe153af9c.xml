@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_ui_action">
+    <sys_ui_action action="INSERT_OR_UPDATE">
+        <action_name>Button that assigns new values to fields</action_name>
+        <active>true</active>
+        <client>false</client>
+        <client_script_v2><![CDATA[function onClick(g_form) {
+
+}]]></client_script_v2>
+        <comments/>
+        <condition>!current.isNewRecord()</condition>
+        <form_action>true</form_action>
+        <form_button>true</form_button>
+        <form_button_v2>false</form_button_v2>
+        <form_context_menu>false</form_context_menu>
+        <form_link>false</form_link>
+        <form_menu_button_v2>false</form_menu_button_v2>
+        <form_style/>
+        <format_for_configurable_workspace>false</format_for_configurable_workspace>
+        <hint/>
+        <isolate_script>false</isolate_script>
+        <list_action>false</list_action>
+        <list_banner_button>false</list_banner_button>
+        <list_button>false</list_button>
+        <list_choice>false</list_choice>
+        <list_context_menu>false</list_context_menu>
+        <list_link>false</list_link>
+        <list_save_with_form_button>false</list_save_with_form_button>
+        <list_style/>
+        <messages/>
+        <name>*Assign</name>
+        <onclick>assignToDeveloper()</onclick>
+        <order>100</order>
+        <script><![CDATA[// Define the function to be executed by the UI Action
+function assignToDeveloper() {
+  // Get the current record
+  var current = this;
+	alert("test");
+  var currentRecord = new GlideRecord("x_982612_technical_incident");
+  currentRecord.addQuery('sys_id', current.sys_id);
+  currentRecord.query();
+  if (currentRecord.next()) {
+    
+	 // Check if the u_assignment_group and u_assigned_to fields are empty
+    var assignmentGroupValue = currentRecord.getValue("u_assignment_group");
+    var assignedToValue = currentRecord.getValue("u_assigned_to");
+    var fieldsEmpty = JSUtil.nil(assignmentGroupValue) && JSUtil.nil(assignedToValue);
+      gs.log("anwar",assignedToValue);
+    // Get the sys_id of the "Application Development" group from the sys_user_group table
+    var assignmentGroupGR = new GlideRecord('sys_user_group');
+    assignmentGroupGR.addQuery('name', 'Application Development');
+    assignmentGroupGR.query();
+    if (assignmentGroupGR.next()) {
+        assignmentGroupValue = assignmentGroupGR.getUniqueValue();
+    }
+
+    // Get the sys_id of the currently logged in user from the v_user_session table
+    var sessionGR = new GlideRecord('v_user_session');
+    sessionGR.addQuery('user', gs.getUserID());
+    sessionGR.query();
+    if (sessionGR.next()) {
+        assignedToValue = sessionGR.getValue('user');
+    }
+
+    // Update the u_assignment_group and u_assigned_to fields
+   // if (fieldsEmpty)
+	{
+      currentRecord.u_assignment_group = assignmentGroupValue;
+      currentRecord.u_assigned_to = assignedToValue;
+    }
+
+    // Set the value of the u_customer_state field to "Assigned"
+    currentRecord.u_customer_state = "assigned";
+
+    // Save the changes
+   // current.update();
+  }
+}
+]]></script>
+        <show_insert>false</show_insert>
+        <show_multiple_update>false</show_multiple_update>
+        <show_query>false</show_query>
+        <show_update>true</show_update>
+        <sys_class_name>sys_ui_action</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2023-03-13 08:59:00</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>65a1d329976121105540bf8fe153af9c</sys_id>
+        <sys_mod_count>27</sys_mod_count>
+        <sys_name>*Assign</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Technical Exam" source="x_982612_technical">c7fdf35b979d21105540bf8fe153afb6</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Technical Exam">c7fdf35b979d21105540bf8fe153afb6</sys_scope>
+        <sys_update_name>sys_ui_action_65a1d329976121105540bf8fe153af9c</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2023-03-13 14:23:18</sys_updated_on>
+        <table>x_982612_technical_incident</table>
+        <ui11_compatible>true</ui11_compatible>
+        <ui16_compatible>false</ui16_compatible>
+    </sys_ui_action>
+</record_update>

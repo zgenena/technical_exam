@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_ui_form_sections form_id="40d840e797dd21105540bf8fe153afaa" sys_domain="global" table="x_982612_technical_incident" version="3">
+        <sys_ui_form_section action="INSERT_OR_UPDATE">
+            <position>0</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2023-03-06 13:01:05</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>84d880e797dd21105540bf8fe153af05</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_overrides/>
+            <sys_ui_form display_value="x_982612_technical_incident" name="x_982612_technical_incident" sys_domain="global" view="Default view">40d840e797dd21105540bf8fe153afaa</sys_ui_form>
+            <sys_ui_section caption="NULL" display_value="" name="x_982612_technical_incident" sys_domain="global" view="Default view">b00ff79b979d21105540bf8fe153afaf</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2023-03-06 13:01:05</sys_updated_on>
+        </sys_ui_form_section>
+        <sys_ui_form_section action="INSERT_OR_UPDATE">
+            <position>1</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2023-03-06 13:01:05</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>80d880e797dd21105540bf8fe153af06</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_overrides/>
+            <sys_ui_form display_value="x_982612_technical_incident" name="x_982612_technical_incident" sys_domain="global" view="Default view">40d840e797dd21105540bf8fe153afaa</sys_ui_form>
+            <sys_ui_section caption="Notes" display_value="Notes" name="x_982612_technical_incident" sys_domain="global" view="Default view">8cd840e797dd21105540bf8fe153afa8</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2023-03-06 13:01:05</sys_updated_on>
+        </sys_ui_form_section>
+        <sys_ui_form action="INSERT_OR_UPDATE">
+            <name>x_982612_technical_incident</name>
+            <roles/>
+            <sys_class_name>sys_ui_form</sys_class_name>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2023-03-06 13:01:05</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>40d840e797dd21105540bf8fe153afaa</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>x_982612_technical_incident</sys_name>
+            <sys_overrides/>
+            <sys_package display_value="Technical Exam" source="x_982612_technical">c7fdf35b979d21105540bf8fe153afb6</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="Technical Exam">c7fdf35b979d21105540bf8fe153afb6</sys_scope>
+            <sys_update_name>sys_ui_form_sections_40d840e797dd21105540bf8fe153afaa</sys_update_name>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2023-03-06 13:01:05</sys_updated_on>
+            <sys_user/>
+            <view display_value="Default view" name="NULL">Default view</view>
+            <view_name/>
+        </sys_ui_form>
+    </sys_ui_form_sections>
+</record_update>

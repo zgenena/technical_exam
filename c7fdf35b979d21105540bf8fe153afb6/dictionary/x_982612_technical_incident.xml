@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element audit="true" db_object_id="f41ebbdb979d21105540bf8fe153afa5" label="Incident" max_length="40" name="x_982612_technical_incident" type="collection">
+        <element attributes="edge_encryption_enabled=true" default="javascript:getNextObjNumberPadded();" dynamic_default_value="fdcb83a85f220100a9ad2572f2b4773c" label="Number" max_length="40" name="number" read_only="true" type="string" use_dynamic_default="true"/>
+        <element attributes="encode_utf8=false" label="Assigned to" max_length="32" name="u_assigned_to" reference="v_user_session" type="reference"/>
+        <element attributes="encode_utf8=false" label="Assignment group" max_length="32" name="u_assignment_group" reference="sys_user_group" type="reference"/>
+        <element attributes="encode_utf8=false" dynamic_creation_script="var current = gs.getCurrentRecord();&#13;&#10;var g_form = current.getGlideForm();&#13;&#10;var company_value = g_form.getValue('company');&#13;&#10;var user_gr = new GlideRecord('sys_user');&#13;&#10;user_gr.addQuery('company', company_value);&#13;&#10;query.addQuery('sys_id', 'IN', user_gr);&#13;&#10;query.addQuery('u_caller', '!=', '');" label="Caller" mandatory="true" max_length="32" name="u_caller" reference="sys_user" reference_qual="javascript: &quot;company=&quot; + current.u_company" type="reference" use_dependent_field="true" use_reference_qualifier="advanced"/>
+        <element attributes="encode_utf8=false" label="Company" mandatory="true" max_length="32" name="u_company" reference="core_company" type="reference"/>
+        <element attributes="edge_encryption_enabled=true" choice="1" label="Concerned" max_length="40" name="u_concerned" type="string">
+            <choice>
+                <element inactive_on_update="false" label="All Users" sequence="0" value="all users"/>
+                <element inactive_on_update="false" label="One User" sequence="1" value="one user"/>
+                <element inactive_on_update="false" label="Several Users" sequence="2" value="several users"/>
+            </choice>
+        </element>
+        <element attributes="encode_utf8=false" label="Configuration item" max_length="32" name="u_configuration_item" reference="x_58872_needit_needit" type="reference"/>
+        <element label="Customer" max_length="80" name="u_customer" read_only="true" type="field_name"/>
+        <element attributes="edge_encryption_enabled=true" choice="1" label="Customer State" max_length="40" name="u_customer_state" read_only="true" type="string">
+            <choice>
+                <element inactive_on_update="false" label="Open" sequence="0" value="open"/>
+                <element inactive_on_update="false" label="Assigned" sequence="1" value="assigned"/>
+                <element inactive_on_update="false" label="Closed" sequence="2" value="closed"/>
+                <element inactive_on_update="false" label="Rejected" sequence="3" value="rejected"/>
+                <element inactive_on_update="false" label="Pending Provider" sequence="4" value="pending provider"/>
+                <element inactive_on_update="false" label="Pending Validation - Clarification" sequence="5" value="pending validation - clarification"/>
+            </choice>
+        </element>
+        <element attributes="edge_encryption_enabled=true" label="Description" max_length="4000" name="u_description" type="string"/>
+        <element attributes="edge_encryption_enabled=true" choice="1" label="Incident Support Type" max_length="40" name="u_incident_support_type" type="string">
+            <choice>
+                <element inactive_on_update="false" label="Commercial Support" sequence="0" value="commercial support"/>
+                <element inactive_on_update="false" label="Technical Support" sequence="1" value="technical support"/>
+            </choice>
+        </element>
+        <element attributes="edge_encryption_enabled=true" choice="1" label="Incident Type" max_length="40" name="u_incident_type" type="string">
+            <choice>
+                <element inactive_on_update="false" label="Invoice not received" sequence="0" value="invoice not received"/>
+                <element inactive_on_update="false" label="Device not reachable" sequence="1" value="device not reachable"/>
+            </choice>
+        </element>
+        <element attributes="encode_utf8=false" label="Mobile Provider Group" max_length="32" name="u_mobile_provider_group" reference="sys_user_group" type="reference"/>
+        <element choice="3" default="5" label="Priority" max_length="40" name="u_priority" read_only="true" type="integer">
+            <choice>
+                <element inactive_on_update="false" label="1 - Critical" sequence="0" value="1"/>
+                <element inactive_on_update="false" label="2 - High" sequence="1" value="2"/>
+                <element inactive_on_update="false" label="3 - Moderate" sequence="2" value="3"/>
+                <element inactive_on_update="false" label="4 - Low" sequence="3" value="4"/>
+                <element inactive_on_update="false" label="5 - Planning" sequence="4" value="5"/>
+            </choice>
+        </element>
+        <element attributes="edge_encryption_enabled=true" label="Provider Incident" max_length="125" name="u_provider_incident" type="string"/>
+        <element attributes="edge_encryption_enabled=true" choice="1" label="Provider State" max_length="40" name="u_provider_state" type="string">
+            <choice>
+                <element inactive_on_update="false" label="GSD" sequence="0" value="gsd"/>
+                <element inactive_on_update="false" label="Open" sequence="1" value="open"/>
+                <element inactive_on_update="false" label="Closed" sequence="2" value="closed"/>
+                <element inactive_on_update="false" label="Resolved" sequence="3" value="resolved"/>
+                <element inactive_on_update="false" label="Ongoing" sequence="4" value="ongoing"/>
+            </choice>
+        </element>
+        <element attributes="edge_encryption_enabled=true" choice="1" label="Service Category" max_length="40" name="u_service_category" type="string">
+            <choice>
+                <element inactive_on_update="false" label="MNO Services" sequence="0" value="MNO Services"/>
+                <element inactive_on_update="false" label="Provider Services" sequence="3" value="provider services"/>
+            </choice>
+        </element>
+        <element attributes="edge_encryption_enabled=true" choice="1" label="Service Element" max_length="40" name="u_service_element" type="string">
+            <choice>
+                <element inactive_on_update="false" label="Invoice" sequence="0" value="invoice"/>
+                <element inactive_on_update="false" label="Device" sequence="1" value="device"/>
+            </choice>
+        </element>
+        <element attributes="edge_encryption_enabled=true" default="Assessment : ATF Assessor" label="Short description" mandatory="true" max_length="160" name="u_short_description" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="Work notes" max_length="4000" name="u_work_notes" type="journal"/>
+        <index name="index">
+            <element name="u_assigned_to"/>
+        </index>
+        <index name="index2">
+            <element name="u_assignment_group"/>
+        </index>
+        <index name="index3">
+            <element name="u_caller"/>
+        </index>
+        <index name="index4">
+            <element name="u_company"/>
+        </index>
+        <index name="index5">
+            <element name="u_configuration_item"/>
+        </index>
+        <index name="index6">
+            <element name="u_mobile_provider_group"/>
+        </index>
+    </element>
+</database>

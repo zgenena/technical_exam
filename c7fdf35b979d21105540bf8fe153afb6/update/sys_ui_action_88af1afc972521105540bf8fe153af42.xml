@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_ui_action">
+    <sys_ui_action action="INSERT_OR_UPDATE">
+        <action_name>Button that assigns new values to fields</action_name>
+        <active>true</active>
+        <client>false</client>
+        <client_script_v2><![CDATA[function onClick(g_form) {
+
+}]]></client_script_v2>
+        <comments/>
+        <condition>!current.isNewRecord()</condition>
+        <form_action>true</form_action>
+        <form_button>true</form_button>
+        <form_button_v2>false</form_button_v2>
+        <form_context_menu>false</form_context_menu>
+        <form_link>false</form_link>
+        <form_menu_button_v2>false</form_menu_button_v2>
+        <form_style/>
+        <format_for_configurable_workspace>false</format_for_configurable_workspace>
+        <hint/>
+        <isolate_script>false</isolate_script>
+        <list_action>false</list_action>
+        <list_banner_button>false</list_banner_button>
+        <list_button>false</list_button>
+        <list_choice>false</list_choice>
+        <list_context_menu>false</list_context_menu>
+        <list_link>false</list_link>
+        <list_save_with_form_button>false</list_save_with_form_button>
+        <list_style/>
+        <messages/>
+        <name>!Assign</name>
+        <onclick/>
+        <order>100</order>
+        <script><![CDATA[(function executeAction() {
+
+	// Get the current record
+  var gr = new GlideRecord(current.table_name);
+  gr.get(current.sys_id);
+
+  // Check if the u_assignment_group and u_assigned_to fields already have values
+  if (gr.u_assignment_group.nil() && gr.u_assigned_to.nil()) {
+    // Get the sys_id of the "Application Development" group
+    var groupGR = new GlideRecord('sys_user_group');
+    groupGR.addQuery('name', 'Application Development');
+    groupGR.query();
+    if (groupGR.next()) {
+      var groupId = groupGR.sys_id.toString();
+    }
+
+    // Set the value of the u_assignment_group reference field
+    gr.u_assignment_group = groupId;
+
+    // Set the value of the u_assigned_to reference field to the currently logged in user
+    var userSessionGR = new GlideRecord('v_user_session');
+    userSessionGR.addQuery('user', gs.getUserID());
+    userSessionGR.query();
+    if (userSessionGR.next()) {
+      gr.u_assigned_to = userSessionGR.user.toString();
+    }
+  }
+
+  // Set the value of the u_customer_state choice field
+  gr.u_customer_state = 'assigned';
+
+  // Update the record
+  gr.update();
+
+  // Refresh the form to display the updated values
+  g_form.refreshHomepageNavigator();
+})();]]></script>
+        <show_insert>true</show_insert>
+        <show_multiple_update>false</show_multiple_update>
+        <show_query>false</show_query>
+        <show_update>true</show_update>
+        <sys_class_name>sys_ui_action</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2023-03-10 21:46:32</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>88af1afc972521105540bf8fe153af42</sys_id>
+        <sys_mod_count>9</sys_mod_count>
+        <sys_name>!Assign</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Technical Exam" source="x_982612_technical">c7fdf35b979d21105540bf8fe153afb6</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Technical Exam">c7fdf35b979d21105540bf8fe153afb6</sys_scope>
+        <sys_update_name>sys_ui_action_88af1afc972521105540bf8fe153af42</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2023-03-13 09:02:05</sys_updated_on>
+        <table>x_982612_technical_incident</table>
+        <ui11_compatible>true</ui11_compatible>
+        <ui16_compatible>false</ui16_compatible>
+    </sys_ui_action>
+</record_update>
